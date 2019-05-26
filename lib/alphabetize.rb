@@ -1,9 +1,12 @@
+ESPERANTO_ALPHABET = "abcĉdefgĝhĥijĵklmnoprsŝtuŭvz"
 
-
- def alphabetize(sentences_array)
-  sentences_array.sort_by do |phrase|
-    phrase.split(“”).map do |character|
-      ESPERANTO_ALPHABET.index(character)
-	  end
-	end
+def alphabetize(arr)
+    arr.sort_by! do |a|
+    positions = []
+    a.each_char do |char|
+      positions << ESPERANTO_ALPHABET.index(char)
+    end
+    positions
+  end
+  arr
 end
